@@ -23,6 +23,10 @@ class App extends React.Component {
     showSuccess: 0,
     pastSelections: []
   }
+
+  UNSAFE_componentWillMount() {
+    this.setState({ pictures: pictures })
+  }
   clickedImage = id => {
     // assign the state of the empty array to a let to be updated
     let pastSelections = this.state.pastSelections;
@@ -101,9 +105,10 @@ class App extends React.Component {
         <div className="row">
           {this.state.pictures.map(pictures => (
             <Card
-              // key={pictures.id}
+              logic={this.logic}
               id={pictures.id}
-              image={pictures.image}
+              key={pictures.id}
+              image={pictures.url}
               clickedImage={this.clickedImage}
             />
           ))}
