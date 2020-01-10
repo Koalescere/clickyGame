@@ -12,7 +12,7 @@ import "./card.css";
 const Cards = props => (
     <div className="card">
         <img alt={props.name} src={props.image} id={props.id} className='logic'
-            onClick={() => props.logic(props.id)} />
+            onClick={() => props.clickedImage(props.id)} />
     </div>
 );
 

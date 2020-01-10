@@ -105,7 +105,7 @@ class App extends React.Component {
         <div className="row">
           {this.state.pictures.map(pictures => (
             <Card
-              logic={this.logic}
+
               id={pictures.id}
               key={pictures.id}
               image={pictures.url}
